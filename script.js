@@ -5,6 +5,12 @@ const button = document.querySelector("button");
 
 button.addEventListener("click", () => {
     sideLength = Number(prompt("How many boxes per side?"));
+    // Input validation
+    if (sideLength > 100) {
+        alert("Sorry, sides are limited to 100 boxes. :(");
+        // Exit the function
+        return;
+    }
     gridContainer.innerHTML = "";
     generateGrid(sideLength);
 });
