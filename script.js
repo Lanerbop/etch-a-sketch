@@ -24,9 +24,11 @@ function generateGrid(sideLength = 16) {
         let box = document.createElement("div");
         box.style.width = width;
         box.style.height = height;
+        box.style.opacity = 0;
 
         box.addEventListener("mouseover", () => {
             box.style.backgroundColor = "blue";
+            box.style.opacity = Number(box.style.opacity) + 0.25;
         });
     
         gridContainer.appendChild(box);
